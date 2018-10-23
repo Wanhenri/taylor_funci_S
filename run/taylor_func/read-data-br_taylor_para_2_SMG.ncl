@@ -55,19 +55,19 @@ sl_48 = fallf->prec
 fallf = addfile ("/home/smagnum/anaconda2/envs/ncl_notebook/dados_netcd/MAY2015_72Z_12Z_SMG_versao210.nc", "r")
 sl_72 = fallf->prec 
 
-sl_24@_FillValue=-9.99e+08; -9999
-sl_48@_FillValue=-9.99e+08; -9999
-sl_72@_FillValue=-9.99e+08; -9999
+sl_24@_FillValue=-9.99e+08
+sl_48@_FillValue=-9.99e+08
+sl_72@_FillValue=-9.99e+08
 
 
 fallg = addfile ("/home/smagnum/anaconda2/envs/ncl_notebook/dados_netcd/prev.2015.mar.24h_seldate.nc","r")
-gfs_24 = fallg->APCP_surface    ;new2
+gfs_24 = fallg->APCP_surface   
 
 fallg = addfile ("/home/smagnum/anaconda2/envs/ncl_notebook/dados_netcd/prev.2015.mar.48h_seldate.nc","r")
-gfs_48 = fallg->APCP_surface    ;new2
+gfs_48 = fallg->APCP_surface   
 
 fallg = addfile ("/home/smagnum/anaconda2/envs/ncl_notebook/dados_netcd/prev.2015.mar.72h_seldate.nc","r")
-gfs_72 = fallg->APCP_surface    ;new2
+gfs_72 = fallg->APCP_surface 
 
 ;;BAM
 
@@ -92,15 +92,14 @@ print(aa6o)
 ;;; 24hrs
 n6m24=wgt_areaave(new1_24(:,:,:),1.0,1.0,0)
 print(n6m24)
- sl6m24=wgt_areaave(sl_24(:,:,:),1.0,1.0,0)	;modelo SL
- aa6m24=wgt_areaave(new2_24(:,:,:),1.0,1.0,0)	;modelo BAM(1.0 ou 1.1)
+ sl6m24=wgt_areaave(sl_24(:,:,:),1.0,1.0,0)	
+ aa6m24=wgt_areaave(new2_24(:,:,:),1.0,1.0,0)	
 gfs6m24=wgt_areaave(gfs_24(:,:,:),1.0,1.0,0)
 bam6m24=wgt_areaave(bam_24(:,:,:),1.0,1.0,0)
 
 
 ;;; 48hrs
- n6m48=wgt_areaave(new1_48(:,:,:),1.0,1.0,0)	;295 e 315 porque trabalha com o globo aberto
-; gfs6m48=wgt_areaave(gfs_48(:,:,:),1.0,1.0,0)
+ n6m48=wgt_areaave(new1_48(:,:,:),1.0,1.0,0)	
  sl6m48=wgt_areaave(sl_48  (:,:,:),1.0,1.0,0)
  aa6m48=wgt_areaave(new2_48(:,:,:),1.0,1.0,0)
  gfs6m48=wgt_areaave(gfs_48(:,:,:),1.0,1.0,0)
@@ -108,7 +107,6 @@ bam6m24=wgt_areaave(bam_24(:,:,:),1.0,1.0,0)
 
 ;;; 72hrs
  n6m72=wgt_areaave(new1_72(:,:,:),1.0,1.0,0)
-; gfs6m72=wgt_areaave(gfs_72(:,:,:),1.0,1.0,0)
  sl6m72=wgt_areaave(sl_72  (:,:,:),1.0,1.0,0)
  aa6m72=wgt_areaave(new2_72(:,:,:),1.0,1.0,0)
  gfs6m72=wgt_areaave(gfs_72(:,:,:),1.0,1.0,0)
@@ -118,17 +116,17 @@ print("Sudeste - Estacao")
 
 ;la plata basin
 print("OK")
- aa5o=wgt_areaave(tmpa(:,{-36:-24},{295:315}),1.0,1.0,0)           ;nome do arquivo prec_TMPA.nc, dados observados
+ aa5o=wgt_areaave(tmpa(:,{-36:-24},{295:315}),1.0,1.0,0)           
 
 ;;; 24hrs
- n5m24=wgt_areaave(new1_24(:,{-36:-24},{295:315}),1.0,1.0,0)        ;modelo BAM(1.0 ou 1.1)
- gfs5m24=wgt_areaave(gfs_24(:,{-36:-24},{295:315}),1.0,1.0,0)       ;modelo GFS
- sl5m24=wgt_areaave(sl_24(:,{-36:-24},{295:315}),1.0,1.0,0) ;modelo SL
- aa5m24=wgt_areaave(new2_24(:,{-36:-24},{295:315}),1.0,1.0,0)       ;modelo BAM(1.0 ou 1.1)
- bam5m24=wgt_areaave(bam_24(:,{-36:-24},{295:315}),1.0,1.0,0)       ;modelo BAM(1.0 ou 1.1)
-
+ n5m24=wgt_areaave(new1_24(:,{-36:-24},{295:315}),1.0,1.0,0)        
+ gfs5m24=wgt_areaave(gfs_24(:,{-36:-24},{295:315}),1.0,1.0,0)      
+ sl5m24=wgt_areaave(sl_24(:,{-36:-24},{295:315}),1.0,1.0,0)
+ aa5m24=wgt_areaave(new2_24(:,{-36:-24},{295:315}),1.0,1.0,0)       
+ bam5m24=wgt_areaave(bam_24(:,{-36:-24},{295:315}),1.0,1.0,0)       
+ 
 ;;; 48hrs
- n5m48=wgt_areaave(new1_48(:,{-36:-24},{295:315}),1.0,1.0,0)       ;295 e 315 porque trabalha com o globo aberto
+ n5m48=wgt_areaave(new1_48(:,{-36:-24},{295:315}),1.0,1.0,0)       
  gfs5m48=wgt_areaave(gfs_48(:,{-36:-24},{295:315}),1.0,1.0,0)
  sl5m48=wgt_areaave(sl_48  (:,{-36:-24},{295:315}),1.0,1.0,0)
  aa5m48=wgt_areaave(new2_48(:,{-36:-24},{295:315}),1.0,1.0,0)
@@ -145,14 +143,14 @@ print("recorte la plata OK")
 
 
 ;sudeste
- aa4o=wgt_areaave(tmpa(:,{-24:-12},{310:325}),1.0,1.0,0)		;nome do arquivo prec_TMPA.nc, dados observados
+ aa4o=wgt_areaave(tmpa(:,{-24:-12},{310:325}),1.0,1.0,0)		
 
 ;;; 24hrs
- n4m24=wgt_areaave(new1_24(:,{-24:-12},{310:325}),1.0,1.0,0)	;modelo BAM(1.0 ou 1.1)
- gfs4m24=wgt_areaave(gfs_24(:,{-24:-12},{310:325}),1.0,1.0,0)	;modelo GFS
- sl4m24=wgt_areaave(sl_24(:,{-24:-12},{310:325}),1.0,1.0,0)	;modelo SL
- aa4m24=wgt_areaave(new2_24(:,{-24:-12},{310:325}),1.0,1.0,0)	;modelo BAM(1.0 ou 1.1)
- bam4m24=wgt_areaave(bam_24(:,{-24:-12},{310:325}),1.0,1.0,0)	;modelo BAM(1.0 ou 1.1)
+ n4m24=wgt_areaave(new1_24(:,{-24:-12},{310:325}),1.0,1.0,0)	
+ gfs4m24=wgt_areaave(gfs_24(:,{-24:-12},{310:325}),1.0,1.0,0)	
+ sl4m24=wgt_areaave(sl_24(:,{-24:-12},{310:325}),1.0,1.0,0)	
+ aa4m24=wgt_areaave(new2_24(:,{-24:-12},{310:325}),1.0,1.0,0)	
+ bam4m24=wgt_areaave(bam_24(:,{-24:-12},{310:325}),1.0,1.0,0)	
 
 ;;; 48hrs
  n4m48=wgt_areaave(new1_48(:,{-24:-12},{310:325}),1.0,1.0,0)
@@ -171,14 +169,14 @@ print("recorte la plata OK")
 print("recorte sudeste OK")
 
 ; centro oeste
- aa3o=wgt_areaave(tmpa(:,{-24:-12},{295:310}),1.0,1.0,0)		;nome do arquivo prec_TMPA.nc, dados observados
+ aa3o=wgt_areaave(tmpa(:,{-24:-12},{295:310}),1.0,1.0,0)		
 
 ;;; 24hrs
- n3m24=wgt_areaave(new1_24(:,{-24:-12},{295:310}),1.0,1.0,0)	;modelo BAM(1.0 ou 1.1)
- gfs3m24=wgt_areaave(gfs_24(:,{-24:-12},{295:310}),1.0,1.0,0)	;modelo GFS
- sl3m24=wgt_areaave(sl_24(:,{-24:-12},{295:310}),1.0,1.0,0)	;modelo SL
- aa3m24=wgt_areaave(new2_24(:,{-24:-12},{295:310}),1.0,1.0,0)	;modelo BAM(1.0 ou 1.1)
- bam3m24=wgt_areaave(bam_24(:,{-24:-12},{295:310}),1.0,1.0,0)	;modelo BAM(1.0 ou 1.1)
+ n3m24=wgt_areaave(new1_24(:,{-24:-12},{295:310}),1.0,1.0,0)	
+ gfs3m24=wgt_areaave(gfs_24(:,{-24:-12},{295:310}),1.0,1.0,0)	
+ sl3m24=wgt_areaave(sl_24(:,{-24:-12},{295:310}),1.0,1.0,0)	
+ aa3m24=wgt_areaave(new2_24(:,{-24:-12},{295:310}),1.0,1.0,0)	
+ bam3m24=wgt_areaave(bam_24(:,{-24:-12},{295:310}),1.0,1.0,0)	
 
 ;;; 48hrs
  n3m48=wgt_areaave(new1_48(:,{-24:-12},{295:310}),1.0,1.0,0)
@@ -197,14 +195,14 @@ print("recorte sudeste OK")
 print("recorte centro oeste OK")
 
 ;nordeste
- aa2o=wgt_areaave(tmpa(:,{-12:0},{310:325}),1.0,1.0,0)		;nome do arquivo prec_TMPA.nc, dados observados
+ aa2o=wgt_areaave(tmpa(:,{-12:0},{310:325}),1.0,1.0,0)		
 
 ;;; 24hrs
- n2m24=wgt_areaave(new1_24(:,{-12:0},{310:325}),1.0,1.0,0)		;modelo BAM(1.0 ou 1.1)
- gfs2m24=wgt_areaave(gfs_24(:,{-12:0},{310:325}),1.0,1.0,0)	;modelo GFS
- sl2m24=wgt_areaave(sl_24(:,{-12:0},{310:325}),1.0,1.0,0)		;modelo SL
- aa2m24=wgt_areaave(new2_24(:,{-12:0},{310:325}),1.0,1.0,0)	;modelo BAM(1.0 ou 1.1)
- bam2m24=wgt_areaave(bam_24(:,{-12:0},{310:325}),1.0,1.0,0)	;modelo BAM(1.0 ou 1.1)
+ n2m24=wgt_areaave(new1_24(:,{-12:0},{310:325}),1.0,1.0,0)		
+ gfs2m24=wgt_areaave(gfs_24(:,{-12:0},{310:325}),1.0,1.0,0)	
+ sl2m24=wgt_areaave(sl_24(:,{-12:0},{310:325}),1.0,1.0,0)		
+ aa2m24=wgt_areaave(new2_24(:,{-12:0},{310:325}),1.0,1.0,0)	
+ bam2m24=wgt_areaave(bam_24(:,{-12:0},{310:325}),1.0,1.0,0)	
 
 ;;; 48hrs
  n2m48=wgt_areaave(new1_48(:,{-12:0},{310:325}),1.0,1.0,0)
@@ -223,14 +221,14 @@ print("recorte centro oeste OK")
 print("recorte nordeste OK")
 
 ;amazonia
- aa1o=wgt_areaave(tmpa(:,{-12:0},{295:310}),1.0,1.0,0)		;nome do arquivo prec_TMPA.nc, dados observados
+ aa1o=wgt_areaave(tmpa(:,{-12:0},{295:310}),1.0,1.0,0)		
 
 ;;; 24hrs
- n1m24=wgt_areaave(new1_24(:,{-12:0},{295:310}),1.0,1.0,0)		;modelo BAM(1.0 ou 1.1)
- gfs1m24=wgt_areaave(gfs_24(:,{-12:0},{295:310}),1.0,1.0,0)	;modelo GFS
- sl1m24=wgt_areaave(sl_24(:,{-12:0},{295:310}),1.0,1.0,0)		;modelo SL
- aa1m24=wgt_areaave(new2_24(:,{-12:0},{295:310}),1.0,1.0,0)	;modelo BAM(1.0 ou 1.1)
- bam1m24=wgt_areaave(bam_24(:,{-12:0},{295:310}),1.0,1.0,0)	;modelo BAM(1.0 ou 1.1)
+ n1m24=wgt_areaave(new1_24(:,{-12:0},{295:310}),1.0,1.0,0)		
+ gfs1m24=wgt_areaave(gfs_24(:,{-12:0},{295:310}),1.0,1.0,0)	
+ sl1m24=wgt_areaave(sl_24(:,{-12:0},{295:310}),1.0,1.0,0)		
+ aa1m24=wgt_areaave(new2_24(:,{-12:0},{295:310}),1.0,1.0,0)	
+ bam1m24=wgt_areaave(bam_24(:,{-12:0},{295:310}),1.0,1.0,0)	
 
 ;;; 48hrs
  n1m48=wgt_areaave(new1_48(:,{-12:0},{295:310}),1.0,1.0,0)
@@ -250,8 +248,8 @@ print("recorte nordeste OK")
 print("recorte amazônia OK")
 
 ;;;;;  desvios south america    ;;;;;;;;;;;;;;;;
-  tdev1sa= dim_stddev_n_Wrap(aa6o,0)     ;
-                                        ;em relação a dados observados
+  tdev1sa= dim_stddev_n_Wrap(aa6o,0)     
+                                        
   dev1sa = dim_stddev_n_Wrap(aa6m24,0)
   dev2sa = dim_stddev_n_Wrap(aa6m48,0)
   dev3sa = dim_stddev_n_Wrap(aa6m72,0)
@@ -295,7 +293,7 @@ bdev3saN = bdev3sa/tdev1sa
 
 ;;;;;  desvios la plata    ;;;;;;;;;;;;;;;;
   tdev1l= dim_stddev_n_Wrap(aa5o,0)	;
-					;em relação a dados observados
+					
   dev1l = dim_stddev_n_Wrap(aa5m24,0)
   dev2l = dim_stddev_n_Wrap(aa5m48,0)
   dev3l = dim_stddev_n_Wrap(aa5m72,0)
@@ -536,35 +534,35 @@ bdev3aN = bdev3a/tdev3a
 
 ;;; 24hr		
 
-  vm24a1=ndtooned(aa1m24)	;em relação aos dados do new2 de 24 horas de cada zona recortada
+  vm24a1=ndtooned(aa1m24)	
   vm24a2=ndtooned(aa2m24)
   vm24a3=ndtooned(aa3m24)
   vm24a4=ndtooned(aa4m24)
   vm24a5=ndtooned(aa5m24)
   vm24a6=ndtooned(aa6m24)
 
-  vg24a1=ndtooned(gfs1m24)	;em relação aos dados do gfs de 24 horas de cada zona recortada
+  vg24a1=ndtooned(gfs1m24)	
   vg24a2=ndtooned(gfs2m24)
   vg24a3=ndtooned(gfs3m24)
   vg24a4=ndtooned(gfs4m24)
   vg24a5=ndtooned(gfs5m24)
   vg24a6=ndtooned(gfs6m24)
 
-  vmo24a1=ndtooned(n1m24)	;em relação aos dados do new1 de 24 horas de cada zona recortada
+  vmo24a1=ndtooned(n1m24)	
   vmo24a2=ndtooned(n2m24)
   vmo24a3=ndtooned(n3m24)
   vmo24a4=ndtooned(n4m24)
   vmo24a5=ndtooned(n5m24)
   vmo24a6=ndtooned(n6m24)
 
-  vsl24a1=ndtooned(sl1m24)	;em relação aos dados do sl de 24 horas de cada zona recortada
+  vsl24a1=ndtooned(sl1m24)	
   vsl24a2=ndtooned(sl2m24)
   vsl24a3=ndtooned(sl3m24)
   vsl24a4=ndtooned(sl4m24)
   vsl24a5=ndtooned(sl5m24)
   vsl24a6=ndtooned(sl6m24)
 
-  bam24a1=ndtooned(bam1m24)      ;em relação aos dados do sl de 24 horas de cada zona recortada
+  bam24a1=ndtooned(bam1m24)     
   bam24a2=ndtooned(bam2m24)
   bam24a3=ndtooned(bam3m24)
   bam24a4=ndtooned(bam4m24)
