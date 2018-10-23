@@ -4,13 +4,6 @@ load "$NCARG_ROOT/lib/ncarg/nclscripts/csm/contributed.ncl"
 
 begin
 
-;est = (/"verao","outono","inverno","primavera"/)
-;0=verao
-;1=outono
-;2=inverno
-;3=primavera
-;********************************************
-
 estacao="verao"
 est = (/"verao","outono","inverno","primavera"/)
 
