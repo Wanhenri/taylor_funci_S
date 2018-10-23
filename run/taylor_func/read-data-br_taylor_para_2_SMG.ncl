@@ -20,21 +20,18 @@ new1_48=new1->prec
 new1 = addfile ("/home/smagnum/anaconda2/envs/ncl_notebook/dados_netcd/MAY2015_72Z_12Z_NCEP.nc", "r")
 new1_72=new1->prec
 
-new1_24@_FillValue=-9.99e+08; -9999
-new1_48@_FillValue=-9.99e+08; -9999
-new1_72@_FillValue=-9.99e+08; -9999
+new1_24@_FillValue=-9.99e+08
+new1_48@_FillValue=-9.99e+08
+new1_72@_FillValue=-9.99e+08
 
 ;;GDN >>>>M2<<<<
 fall2 = addfile ("/home/smagnum/anaconda2/envs/ncl_notebook/dados_netcd/MAY2015_24Z_12Z_SMG.nc", "r")
-  ;fall2 = addfile ("MAY2015_24Z_12Z_NCEP.nc", "r")
 new2_24 = fall2->prec    
 
 fall2 = addfile ("/home/smagnum/anaconda2/envs/ncl_notebook/dados_netcd/MAY2015_48Z_12Z_SMG.nc", "r")
-  ;fall2 = addfile ("MAY2015_48Z_12Z_NCEP.nc", "r")
 new2_48 = fall2->prec    
 
 fall2 = addfile ("/home/smagnum/anaconda2/envs/ncl_notebook/dados_netcd/MAY2015_72Z_12Z_SMG.nc", "r")
- ;fall2 = addfile ("MAY2015_72Z_12Z_NCEP.nc", "r")
 new2_72 = fall2->prec    
 
 new2_24@_FillValue=-9.99e+08; -9999
@@ -92,52 +89,52 @@ print(aa6o)
 ;;; 24hrs
 n6m24=wgt_areaave(new1_24(:,:,:),1.0,1.0,0)
 print(n6m24)
- sl6m24=wgt_areaave(sl_24(:,:,:),1.0,1.0,0)	
- aa6m24=wgt_areaave(new2_24(:,:,:),1.0,1.0,0)	
+sl6m24=wgt_areaave(sl_24(:,:,:),1.0,1.0,0)	
+aa6m24=wgt_areaave(new2_24(:,:,:),1.0,1.0,0)	
 gfs6m24=wgt_areaave(gfs_24(:,:,:),1.0,1.0,0)
 bam6m24=wgt_areaave(bam_24(:,:,:),1.0,1.0,0)
 
 
 ;;; 48hrs
- n6m48=wgt_areaave(new1_48(:,:,:),1.0,1.0,0)	
- sl6m48=wgt_areaave(sl_48  (:,:,:),1.0,1.0,0)
- aa6m48=wgt_areaave(new2_48(:,:,:),1.0,1.0,0)
- gfs6m48=wgt_areaave(gfs_48(:,:,:),1.0,1.0,0)
- bam6m48=wgt_areaave(bam_48(:,:,:),1.0,1.0,0)
+n6m48=wgt_areaave(new1_48(:,:,:),1.0,1.0,0)	
+sl6m48=wgt_areaave(sl_48  (:,:,:),1.0,1.0,0)
+aa6m48=wgt_areaave(new2_48(:,:,:),1.0,1.0,0)
+gfs6m48=wgt_areaave(gfs_48(:,:,:),1.0,1.0,0)
+bam6m48=wgt_areaave(bam_48(:,:,:),1.0,1.0,0)
 
 ;;; 72hrs
- n6m72=wgt_areaave(new1_72(:,:,:),1.0,1.0,0)
- sl6m72=wgt_areaave(sl_72  (:,:,:),1.0,1.0,0)
- aa6m72=wgt_areaave(new2_72(:,:,:),1.0,1.0,0)
- gfs6m72=wgt_areaave(gfs_72(:,:,:),1.0,1.0,0)
- bam6m72=wgt_areaave(bam_72(:,:,:),1.0,1.0,0)
+n6m72=wgt_areaave(new1_72(:,:,:),1.0,1.0,0)
+sl6m72=wgt_areaave(sl_72  (:,:,:),1.0,1.0,0)
+aa6m72=wgt_areaave(new2_72(:,:,:),1.0,1.0,0)
+gfs6m72=wgt_areaave(gfs_72(:,:,:),1.0,1.0,0)
+bam6m72=wgt_areaave(bam_72(:,:,:),1.0,1.0,0)
  
 print("Sudeste - Estacao")
 
 ;la plata basin
 print("OK")
- aa5o=wgt_areaave(tmpa(:,{-36:-24},{295:315}),1.0,1.0,0)           
+aa5o=wgt_areaave(tmpa(:,{-36:-24},{295:315}),1.0,1.0,0)           
 
 ;;; 24hrs
- n5m24=wgt_areaave(new1_24(:,{-36:-24},{295:315}),1.0,1.0,0)        
- gfs5m24=wgt_areaave(gfs_24(:,{-36:-24},{295:315}),1.0,1.0,0)      
- sl5m24=wgt_areaave(sl_24(:,{-36:-24},{295:315}),1.0,1.0,0)
- aa5m24=wgt_areaave(new2_24(:,{-36:-24},{295:315}),1.0,1.0,0)       
- bam5m24=wgt_areaave(bam_24(:,{-36:-24},{295:315}),1.0,1.0,0)       
+n5m24=wgt_areaave(new1_24(:,{-36:-24},{295:315}),1.0,1.0,0)        
+gfs5m24=wgt_areaave(gfs_24(:,{-36:-24},{295:315}),1.0,1.0,0)      
+sl5m24=wgt_areaave(sl_24(:,{-36:-24},{295:315}),1.0,1.0,0)
+aa5m24=wgt_areaave(new2_24(:,{-36:-24},{295:315}),1.0,1.0,0)       
+bam5m24=wgt_areaave(bam_24(:,{-36:-24},{295:315}),1.0,1.0,0)       
  
 ;;; 48hrs
- n5m48=wgt_areaave(new1_48(:,{-36:-24},{295:315}),1.0,1.0,0)       
- gfs5m48=wgt_areaave(gfs_48(:,{-36:-24},{295:315}),1.0,1.0,0)
- sl5m48=wgt_areaave(sl_48  (:,{-36:-24},{295:315}),1.0,1.0,0)
- aa5m48=wgt_areaave(new2_48(:,{-36:-24},{295:315}),1.0,1.0,0)
- bam5m48=wgt_areaave(bam_48(:,{-36:-24},{295:315}),1.0,1.0,0)
+n5m48=wgt_areaave(new1_48(:,{-36:-24},{295:315}),1.0,1.0,0)       
+gfs5m48=wgt_areaave(gfs_48(:,{-36:-24},{295:315}),1.0,1.0,0)
+sl5m48=wgt_areaave(sl_48  (:,{-36:-24},{295:315}),1.0,1.0,0)
+aa5m48=wgt_areaave(new2_48(:,{-36:-24},{295:315}),1.0,1.0,0)
+bam5m48=wgt_areaave(bam_48(:,{-36:-24},{295:315}),1.0,1.0,0)
 
 ;;; 72hrs
- n5m72=wgt_areaave(new1_72(:,{-36:-24},{295:315}),1.0,1.0,0)
- gfs5m72=wgt_areaave(gfs_72(:,{-36:-24},{295:315}),1.0,1.0,0)
- sl5m72=wgt_areaave(sl_72  (:,{-36:-24},{295:315}),1.0,1.0,0)
- aa5m72=wgt_areaave(new2_72(:,{-36:-24},{295:315}),1.0,1.0,0)
- bam5m72=wgt_areaave(bam_72(:,{-36:-24},{295:315}),1.0,1.0,0)
+n5m72=wgt_areaave(new1_72(:,{-36:-24},{295:315}),1.0,1.0,0)
+gfs5m72=wgt_areaave(gfs_72(:,{-36:-24},{295:315}),1.0,1.0,0)
+sl5m72=wgt_areaave(sl_72  (:,{-36:-24},{295:315}),1.0,1.0,0)
+aa5m72=wgt_areaave(new2_72(:,{-36:-24},{295:315}),1.0,1.0,0)
+bam5m72=wgt_areaave(bam_72(:,{-36:-24},{295:315}),1.0,1.0,0)
 
 print("recorte la plata OK")
 
@@ -146,129 +143,129 @@ print("recorte la plata OK")
  aa4o=wgt_areaave(tmpa(:,{-24:-12},{310:325}),1.0,1.0,0)		
 
 ;;; 24hrs
- n4m24=wgt_areaave(new1_24(:,{-24:-12},{310:325}),1.0,1.0,0)	
- gfs4m24=wgt_areaave(gfs_24(:,{-24:-12},{310:325}),1.0,1.0,0)	
- sl4m24=wgt_areaave(sl_24(:,{-24:-12},{310:325}),1.0,1.0,0)	
- aa4m24=wgt_areaave(new2_24(:,{-24:-12},{310:325}),1.0,1.0,0)	
- bam4m24=wgt_areaave(bam_24(:,{-24:-12},{310:325}),1.0,1.0,0)	
+n4m24=wgt_areaave(new1_24(:,{-24:-12},{310:325}),1.0,1.0,0)	
+gfs4m24=wgt_areaave(gfs_24(:,{-24:-12},{310:325}),1.0,1.0,0)	
+sl4m24=wgt_areaave(sl_24(:,{-24:-12},{310:325}),1.0,1.0,0)	
+aa4m24=wgt_areaave(new2_24(:,{-24:-12},{310:325}),1.0,1.0,0)	
+bam4m24=wgt_areaave(bam_24(:,{-24:-12},{310:325}),1.0,1.0,0)	
 
 ;;; 48hrs
- n4m48=wgt_areaave(new1_48(:,{-24:-12},{310:325}),1.0,1.0,0)
- gfs4m48=wgt_areaave(gfs_48  (:,{-24:-12},{310:325}),1.0,1.0,0)
- sl4m48=wgt_areaave(sl_48  (:,{-24:-12},{310:325}),1.0,1.0,0)
- aa4m48=wgt_areaave(new2_48(:,{-24:-12},{310:325}),1.0,1.0,0)
- bam4m48=wgt_areaave(bam_48(:,{-24:-12},{310:325}),1.0,1.0,0)
+n4m48=wgt_areaave(new1_48(:,{-24:-12},{310:325}),1.0,1.0,0)
+gfs4m48=wgt_areaave(gfs_48  (:,{-24:-12},{310:325}),1.0,1.0,0)
+sl4m48=wgt_areaave(sl_48  (:,{-24:-12},{310:325}),1.0,1.0,0)
+aa4m48=wgt_areaave(new2_48(:,{-24:-12},{310:325}),1.0,1.0,0)
+bam4m48=wgt_areaave(bam_48(:,{-24:-12},{310:325}),1.0,1.0,0)
 
 ;;; 72hrs
- n4m72=wgt_areaave(new1_72(:,{-24:-12},{310:325}),1.0,1.0,0)
- gfs4m72=wgt_areaave(gfs_72  (:,{-24:-12},{310:325}),1.0,1.0,0)
- sl4m72=wgt_areaave(sl_72  (:,{-24:-12},{310:325}),1.0,1.0,0)
- aa4m72=wgt_areaave(new2_72(:,{-24:-12},{310:325}),1.0,1.0,0)
- bam4m72=wgt_areaave(bam_72(:,{-24:-12},{310:325}),1.0,1.0,0)
+n4m72=wgt_areaave(new1_72(:,{-24:-12},{310:325}),1.0,1.0,0)
+gfs4m72=wgt_areaave(gfs_72  (:,{-24:-12},{310:325}),1.0,1.0,0)
+sl4m72=wgt_areaave(sl_72  (:,{-24:-12},{310:325}),1.0,1.0,0)
+aa4m72=wgt_areaave(new2_72(:,{-24:-12},{310:325}),1.0,1.0,0)
+bam4m72=wgt_areaave(bam_72(:,{-24:-12},{310:325}),1.0,1.0,0)
 
 print("recorte sudeste OK")
 
 ; centro oeste
- aa3o=wgt_areaave(tmpa(:,{-24:-12},{295:310}),1.0,1.0,0)		
+aa3o=wgt_areaave(tmpa(:,{-24:-12},{295:310}),1.0,1.0,0)		
 
 ;;; 24hrs
- n3m24=wgt_areaave(new1_24(:,{-24:-12},{295:310}),1.0,1.0,0)	
- gfs3m24=wgt_areaave(gfs_24(:,{-24:-12},{295:310}),1.0,1.0,0)	
- sl3m24=wgt_areaave(sl_24(:,{-24:-12},{295:310}),1.0,1.0,0)	
- aa3m24=wgt_areaave(new2_24(:,{-24:-12},{295:310}),1.0,1.0,0)	
- bam3m24=wgt_areaave(bam_24(:,{-24:-12},{295:310}),1.0,1.0,0)	
+n3m24=wgt_areaave(new1_24(:,{-24:-12},{295:310}),1.0,1.0,0)	
+gfs3m24=wgt_areaave(gfs_24(:,{-24:-12},{295:310}),1.0,1.0,0)	
+sl3m24=wgt_areaave(sl_24(:,{-24:-12},{295:310}),1.0,1.0,0)	
+aa3m24=wgt_areaave(new2_24(:,{-24:-12},{295:310}),1.0,1.0,0)	
+bam3m24=wgt_areaave(bam_24(:,{-24:-12},{295:310}),1.0,1.0,0)	
 
 ;;; 48hrs
- n3m48=wgt_areaave(new1_48(:,{-24:-12},{295:310}),1.0,1.0,0)
- gfs3m48=wgt_areaave(gfs_48  (:,{-24:-12},{295:310}),1.0,1.0,0)
- sl3m48=wgt_areaave(sl_48  (:,{-24:-12},{295:310}),1.0,1.0,0)
- aa3m48=wgt_areaave(new2_48(:,{-24:-12},{295:310}),1.0,1.0,0)
- bam3m48=wgt_areaave(bam_48(:,{-24:-12},{295:310}),1.0,1.0,0)
+n3m48=wgt_areaave(new1_48(:,{-24:-12},{295:310}),1.0,1.0,0)
+gfs3m48=wgt_areaave(gfs_48  (:,{-24:-12},{295:310}),1.0,1.0,0)
+sl3m48=wgt_areaave(sl_48  (:,{-24:-12},{295:310}),1.0,1.0,0)
+aa3m48=wgt_areaave(new2_48(:,{-24:-12},{295:310}),1.0,1.0,0)
+bam3m48=wgt_areaave(bam_48(:,{-24:-12},{295:310}),1.0,1.0,0)
 
 ;;; 72hrs
- n3m72=wgt_areaave(new1_72(:,{-24:-12},{295:310}),1.0,1.0,0)
- gfs3m72=wgt_areaave(gfs_72  (:,{-24:-12},{295:310}),1.0,1.0,0)
- sl3m72=wgt_areaave(sl_72  (:,{-24:-12},{295:310}),1.0,1.0,0)
- aa3m72=wgt_areaave(new2_72(:,{-24:-12},{295:310}),1.0,1.0,0)
- bam3m72=wgt_areaave(bam_72(:,{-24:-12},{295:310}),1.0,1.0,0)
+n3m72=wgt_areaave(new1_72(:,{-24:-12},{295:310}),1.0,1.0,0)
+gfs3m72=wgt_areaave(gfs_72  (:,{-24:-12},{295:310}),1.0,1.0,0)
+sl3m72=wgt_areaave(sl_72  (:,{-24:-12},{295:310}),1.0,1.0,0)
+aa3m72=wgt_areaave(new2_72(:,{-24:-12},{295:310}),1.0,1.0,0)
+bam3m72=wgt_areaave(bam_72(:,{-24:-12},{295:310}),1.0,1.0,0)
 
 print("recorte centro oeste OK")
 
 ;nordeste
- aa2o=wgt_areaave(tmpa(:,{-12:0},{310:325}),1.0,1.0,0)		
+aa2o=wgt_areaave(tmpa(:,{-12:0},{310:325}),1.0,1.0,0)		
 
 ;;; 24hrs
- n2m24=wgt_areaave(new1_24(:,{-12:0},{310:325}),1.0,1.0,0)		
- gfs2m24=wgt_areaave(gfs_24(:,{-12:0},{310:325}),1.0,1.0,0)	
- sl2m24=wgt_areaave(sl_24(:,{-12:0},{310:325}),1.0,1.0,0)		
- aa2m24=wgt_areaave(new2_24(:,{-12:0},{310:325}),1.0,1.0,0)	
- bam2m24=wgt_areaave(bam_24(:,{-12:0},{310:325}),1.0,1.0,0)	
+n2m24=wgt_areaave(new1_24(:,{-12:0},{310:325}),1.0,1.0,0)		
+gfs2m24=wgt_areaave(gfs_24(:,{-12:0},{310:325}),1.0,1.0,0)	
+sl2m24=wgt_areaave(sl_24(:,{-12:0},{310:325}),1.0,1.0,0)		
+aa2m24=wgt_areaave(new2_24(:,{-12:0},{310:325}),1.0,1.0,0)	
+bam2m24=wgt_areaave(bam_24(:,{-12:0},{310:325}),1.0,1.0,0)	
 
 ;;; 48hrs
- n2m48=wgt_areaave(new1_48(:,{-12:0},{310:325}),1.0,1.0,0)
- gfs2m48=wgt_areaave(gfs_48  (:,{-12:0},{310:325}),1.0,1.0,0)
- sl2m48=wgt_areaave(sl_48  (:,{-12:0},{310:325}),1.0,1.0,0)
- aa2m48=wgt_areaave(new2_48(:,{-12:0},{310:325}),1.0,1.0,0)
- bam2m48=wgt_areaave(bam_48(:,{-12:0},{310:325}),1.0,1.0,0)
+n2m48=wgt_areaave(new1_48(:,{-12:0},{310:325}),1.0,1.0,0)
+gfs2m48=wgt_areaave(gfs_48  (:,{-12:0},{310:325}),1.0,1.0,0)
+sl2m48=wgt_areaave(sl_48  (:,{-12:0},{310:325}),1.0,1.0,0)
+aa2m48=wgt_areaave(new2_48(:,{-12:0},{310:325}),1.0,1.0,0)
+bam2m48=wgt_areaave(bam_48(:,{-12:0},{310:325}),1.0,1.0,0)
 
 ;;; 72hrs
- n2m72=wgt_areaave(new1_72(:,{-12:0},{310:325}),1.0,1.0,0)
- gfs2m72=wgt_areaave(gfs_72  (:,{-12:0},{310:325}),1.0,1.0,0)
- sl2m72=wgt_areaave(sl_72  (:,{-12:0},{310:325}),1.0,1.0,0)
- aa2m72=wgt_areaave(new2_72(:,{-12:0},{310:325}),1.0,1.0,0)
- bam2m72=wgt_areaave(bam_72(:,{-12:0},{310:325}),1.0,1.0,0)
+n2m72=wgt_areaave(new1_72(:,{-12:0},{310:325}),1.0,1.0,0)
+gfs2m72=wgt_areaave(gfs_72  (:,{-12:0},{310:325}),1.0,1.0,0)
+sl2m72=wgt_areaave(sl_72  (:,{-12:0},{310:325}),1.0,1.0,0)
+aa2m72=wgt_areaave(new2_72(:,{-12:0},{310:325}),1.0,1.0,0)
+bam2m72=wgt_areaave(bam_72(:,{-12:0},{310:325}),1.0,1.0,0)
 
 print("recorte nordeste OK")
 
 ;amazonia
- aa1o=wgt_areaave(tmpa(:,{-12:0},{295:310}),1.0,1.0,0)		
+aa1o=wgt_areaave(tmpa(:,{-12:0},{295:310}),1.0,1.0,0)		
 
 ;;; 24hrs
- n1m24=wgt_areaave(new1_24(:,{-12:0},{295:310}),1.0,1.0,0)		
- gfs1m24=wgt_areaave(gfs_24(:,{-12:0},{295:310}),1.0,1.0,0)	
- sl1m24=wgt_areaave(sl_24(:,{-12:0},{295:310}),1.0,1.0,0)		
- aa1m24=wgt_areaave(new2_24(:,{-12:0},{295:310}),1.0,1.0,0)	
- bam1m24=wgt_areaave(bam_24(:,{-12:0},{295:310}),1.0,1.0,0)	
+n1m24=wgt_areaave(new1_24(:,{-12:0},{295:310}),1.0,1.0,0)		
+gfs1m24=wgt_areaave(gfs_24(:,{-12:0},{295:310}),1.0,1.0,0)	
+sl1m24=wgt_areaave(sl_24(:,{-12:0},{295:310}),1.0,1.0,0)		
+aa1m24=wgt_areaave(new2_24(:,{-12:0},{295:310}),1.0,1.0,0)	
+bam1m24=wgt_areaave(bam_24(:,{-12:0},{295:310}),1.0,1.0,0)	
 
 ;;; 48hrs
- n1m48=wgt_areaave(new1_48(:,{-12:0},{295:310}),1.0,1.0,0)
- gfs1m48=wgt_areaave(gfs_48(:,{-12:0},{295:310}),1.0,1.0,0)
- sl1m48=wgt_areaave(sl_48  (:,{-12:0},{295:310}),1.0,1.0,0)
- aa1m48=wgt_areaave(new2_48(:,{-12:0},{295:310}),1.0,1.0,0)
- bam1m48=wgt_areaave(bam_48(:,{-12:0},{295:310}),1.0,1.0,0)
+n1m48=wgt_areaave(new1_48(:,{-12:0},{295:310}),1.0,1.0,0)
+gfs1m48=wgt_areaave(gfs_48(:,{-12:0},{295:310}),1.0,1.0,0)
+sl1m48=wgt_areaave(sl_48  (:,{-12:0},{295:310}),1.0,1.0,0)
+aa1m48=wgt_areaave(new2_48(:,{-12:0},{295:310}),1.0,1.0,0)
+bam1m48=wgt_areaave(bam_48(:,{-12:0},{295:310}),1.0,1.0,0)
 
 ;;; 72hrs
- n1m72=wgt_areaave(new1_72(:,{-12:0},{295:310}),1.0,1.0,0)
- gfs1m72=wgt_areaave(gfs_72(:,{-12:0},{295:310}),1.0,1.0,0)
- sl1m72=wgt_areaave(sl_72  (:,{-12:0},{295:310}),1.0,1.0,0)
- aa1m72=wgt_areaave(new2_72(:,{-12:0},{295:310}),1.0,1.0,0)
- bam1m72=wgt_areaave(bam_72(:,{-12:0},{295:310}),1.0,1.0,0)
+n1m72=wgt_areaave(new1_72(:,{-12:0},{295:310}),1.0,1.0,0)
+gfs1m72=wgt_areaave(gfs_72(:,{-12:0},{295:310}),1.0,1.0,0)
+sl1m72=wgt_areaave(sl_72  (:,{-12:0},{295:310}),1.0,1.0,0)
+aa1m72=wgt_areaave(new2_72(:,{-12:0},{295:310}),1.0,1.0,0)
+bam1m72=wgt_areaave(bam_72(:,{-12:0},{295:310}),1.0,1.0,0)
 
 
 print("recorte amazônia OK")
 
 ;;;;;  desvios south america    ;;;;;;;;;;;;;;;;
-  tdev1sa= dim_stddev_n_Wrap(aa6o,0)     
+tdev1sa= dim_stddev_n_Wrap(aa6o,0)     
                                         
-  dev1sa = dim_stddev_n_Wrap(aa6m24,0)
-  dev2sa = dim_stddev_n_Wrap(aa6m48,0)
-  dev3sa = dim_stddev_n_Wrap(aa6m72,0)
+dev1sa = dim_stddev_n_Wrap(aa6m24,0)
+dev2sa = dim_stddev_n_Wrap(aa6m48,0)
+dev3sa = dim_stddev_n_Wrap(aa6m72,0)
 
-  sdev1sa = dim_stddev_n_Wrap(sl6m24,0)
-  sdev2sa = dim_stddev_n_Wrap(sl6m48,0)
-  sdev3sa = dim_stddev_n_Wrap(sl6m72,0)
+sdev1sa = dim_stddev_n_Wrap(sl6m24,0)
+sdev2sa = dim_stddev_n_Wrap(sl6m48,0)
+sdev3sa = dim_stddev_n_Wrap(sl6m72,0)
 
-  gdev1sa = dim_stddev_n_Wrap(gfs6m24,0)
-  gdev2sa = dim_stddev_n_Wrap(gfs6m48,0)
-  gdev3sa = dim_stddev_n_Wrap(gfs6m72,0)
+gdev1sa = dim_stddev_n_Wrap(gfs6m24,0)
+gdev2sa = dim_stddev_n_Wrap(gfs6m48,0)
+gdev3sa = dim_stddev_n_Wrap(gfs6m72,0)
 
-  ndev1sa = dim_stddev_n_Wrap(n6m24,0)
-  ndev2sa= dim_stddev_n_Wrap(n6m48,0)
-  ndev3sa = dim_stddev_n_Wrap(n6m72,0)
+ndev1sa = dim_stddev_n_Wrap(n6m24,0)
+ndev2sa= dim_stddev_n_Wrap(n6m48,0)
+ndev3sa = dim_stddev_n_Wrap(n6m72,0)
 
-  bdev1sa=dim_stddev_n_Wrap(bam6m24,0)
-  bdev2sa=dim_stddev_n_Wrap(bam6m48,0)
-  bdev3sa=dim_stddev_n_Wrap(bam6m72,0)
+bdev1sa=dim_stddev_n_Wrap(bam6m24,0)
+bdev2sa=dim_stddev_n_Wrap(bam6m48,0)
+bdev3sa=dim_stddev_n_Wrap(bam6m72,0)
   
 ;;;;;  normalizando     ;
 dev1saN = dev1sa/tdev1sa
@@ -292,27 +289,27 @@ bdev2saN = bdev2sa/tdev1sa
 bdev3saN = bdev3sa/tdev1sa
 
 ;;;;;  desvios la plata    ;;;;;;;;;;;;;;;;
-  tdev1l= dim_stddev_n_Wrap(aa5o,0)	;
+tdev1l= dim_stddev_n_Wrap(aa5o,0)	;
 					
-  dev1l = dim_stddev_n_Wrap(aa5m24,0)
-  dev2l = dim_stddev_n_Wrap(aa5m48,0)
-  dev3l = dim_stddev_n_Wrap(aa5m72,0)
+dev1l = dim_stddev_n_Wrap(aa5m24,0)
+dev2l = dim_stddev_n_Wrap(aa5m48,0)
+dev3l = dim_stddev_n_Wrap(aa5m72,0)
 
-  sdev1l = dim_stddev_n_Wrap(sl5m24,0)
-  sdev2l = dim_stddev_n_Wrap(sl5m48,0)
-  sdev3l = dim_stddev_n_Wrap(sl5m72,0)
+sdev1l = dim_stddev_n_Wrap(sl5m24,0)
+sdev2l = dim_stddev_n_Wrap(sl5m48,0)
+sdev3l = dim_stddev_n_Wrap(sl5m72,0)
 
-  gdev1l = dim_stddev_n_Wrap(gfs5m24,0)
-  gdev2l = dim_stddev_n_Wrap(gfs5m48,0)
-  gdev3l = dim_stddev_n_Wrap(gfs5m72,0)
+gdev1l = dim_stddev_n_Wrap(gfs5m24,0)
+gdev2l = dim_stddev_n_Wrap(gfs5m48,0)
+gdev3l = dim_stddev_n_Wrap(gfs5m72,0)
 
-  ndev1l = dim_stddev_n_Wrap(n5m24,0)
-  ndev2l= dim_stddev_n_Wrap(n5m48,0)
-  ndev3l = dim_stddev_n_Wrap(n5m72,0)
+ndev1l = dim_stddev_n_Wrap(n5m24,0)
+ndev2l= dim_stddev_n_Wrap(n5m48,0)
+ndev3l = dim_stddev_n_Wrap(n5m72,0)
 
-  bdev1l = dim_stddev_n_Wrap(bam5m24,0)
-  bdev2l=  dim_stddev_n_Wrap(bam5m48,0)
-  bdev3l = dim_stddev_n_Wrap(bam5m72,0)
+bdev1l = dim_stddev_n_Wrap(bam5m24,0)
+bdev2l=  dim_stddev_n_Wrap(bam5m48,0)
+bdev3l = dim_stddev_n_Wrap(bam5m72,0)
 
 ;;;;;  normalizando	;
 dev1lN = dev1l/tdev1l
@@ -339,28 +336,27 @@ bdev3lN = bdev3l/tdev1l
 ;;;;
 
 ;;;;;  desvios sudeste   ;;;;;;;;;;;;;;;;
-  tdev1s = dim_stddev_n_Wrap(aa4o,0)
+tdev1s = dim_stddev_n_Wrap(aa4o,0)
 
-  dev1s = dim_stddev_n_Wrap(aa4m24,0)
-  dev2s = dim_stddev_n_Wrap(aa4m48,0)
-  dev3s = dim_stddev_n_Wrap(aa4m72,0)
+dev1s = dim_stddev_n_Wrap(aa4m24,0)
+dev2s = dim_stddev_n_Wrap(aa4m48,0)
+dev3s = dim_stddev_n_Wrap(aa4m72,0)
 
-  sdev1s = dim_stddev_n_Wrap(sl4m24,0)
-  sdev2s = dim_stddev_n_Wrap(sl4m48,0)
-  sdev3s = dim_stddev_n_Wrap(sl4m72,0)
+sdev1s = dim_stddev_n_Wrap(sl4m24,0)
+sdev2s = dim_stddev_n_Wrap(sl4m48,0)
+sdev3s = dim_stddev_n_Wrap(sl4m72,0)
 
-  gdev1s = dim_stddev_n_Wrap(gfs4m24,0)
-  gdev2s = dim_stddev_n_Wrap(gfs4m48,0)
-  gdev3s = dim_stddev_n_Wrap(gfs4m72,0)
+gdev1s = dim_stddev_n_Wrap(gfs4m24,0)
+gdev2s = dim_stddev_n_Wrap(gfs4m48,0)
+gdev3s = dim_stddev_n_Wrap(gfs4m72,0)
 
-  ndev1s = dim_stddev_n_Wrap(n4m24,0)
-  ndev2s = dim_stddev_n_Wrap(n4m48,0)
-  ndev3s = dim_stddev_n_Wrap(n4m72,0)
+ndev1s = dim_stddev_n_Wrap(n4m24,0)
+ndev2s = dim_stddev_n_Wrap(n4m48,0)
+ndev3s = dim_stddev_n_Wrap(n4m72,0)
 
-
-  bdev1s = dim_stddev_n_Wrap(bam4m24,0)
-  bdev2s = dim_stddev_n_Wrap(bam4m24,0)
-  bdev3s = dim_stddev_n_Wrap(bam4m72,0)
+bdev1s = dim_stddev_n_Wrap(bam4m24,0)
+bdev2s = dim_stddev_n_Wrap(bam4m24,0)
+bdev3s = dim_stddev_n_Wrap(bam4m72,0)
 
 ;;;;;  normalizando
 dev1sN = dev1s/tdev1s
